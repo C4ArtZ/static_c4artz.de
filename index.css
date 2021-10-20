@@ -1,0 +1,390 @@
+/* @font-face {
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/press-start-2p-v9-latin-regular.eot');
+    src: local(''), url('../fonts/press-start-2p-v9-latin-regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/press-start-2p-v9-latin-regular.woff2') format('woff2'),
+    url('../fonts/press-start-2p-v9-latin-regular.woff') format('woff'),
+    url('../fonts/press-start-2p-v9-latin-regular.ttf') format('truetype'),
+    url('../fonts/press-start-2p-v9-latin-regular.svg#PressStart2P') format('svg');
+} */
+
+:root {
+    --white: #eee;
+    --gray-900: #111827;
+    --gray-800: #1F2937;
+    --gray-700: #374151;
+    --gray-600: #4B5563;
+    --gray-500: #6B7280;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --yellow: #ffb700;
+    --green-300: #6EE7B7;
+    --green-400: #34D399;
+    --green-500: #10B981;
+    --transition-delay: 300ms;
+    font-size: 8px;
+}
+
+/* For mobile phones: */
+
+html {
+    /* font-family: 'Press Start 2P', Sans-Serif; */
+    font-family: 'Press Start 2P', sans-serif, monospace;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: var(--gray-900);
+    width: 100vw;
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    /* background: url('../assets/hideout.svg');  */
+    /* background-size: contain; */
+    /* background-repeat:round;
+    background-position: center; */
+    /* background-blend-mode:difference; */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    background: var(--green-400);
+    background: linear-gradient(90deg, var(--green-400) 0%, var(--green-300) 35%, var(--green-400) 100%);
+    /* background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%); */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* background-position: 0;
+    animation-fill-mode: forwards;*/
+    /* animation: Flash 3s linear infinite;  */
+    font-size: 10rem;
+    padding: 12px 48px;
+    text-align: center;
+    padding: 0;
+    animation: MoveUpDown 5s ease-in-out infinite;
+    filter: drop-shadow(0.05rem 0.05rem var(--green-500)) drop-shadow(0.1rem 0.1rem var(--green-500)) drop-shadow(0.15rem 0.15rem var(--green-500)) drop-shadow(0.2rem 0.2rem var(--green-500));
+}
+
+
+p {
+    font-size: 2rem;
+    color: var(--white);
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* background-color: var(--yellow); */
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+    /* gap: 1rem; */
+    /* border-bottom: 1px solid red; */
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, var(--gray-900) 100%);
+}
+
+.navbar ul {
+    display: flex;
+}
+
+li::marker{
+    color: transparent;
+}
+
+.navbar a, .navbar div {
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+#logo{
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-right: 0;
+    margin-left: 1rem;
+}
+
+#logo:hover {
+    transition: var(--transition-delay);
+    color: var(--green-400);
+}
+
+.navbar a:hover, .navbar div:hover {
+    transition: var(--transition-delay);
+    color: var(--green-400);
+    cursor: pointer;
+}
+
+.container {
+    /* height: 50vh; */
+    /* width: 100vw; */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 10rem 3rem;
+    /* animation: MoveUpDown 5s ease-in-out infinite; */
+}
+
+.svg-container {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+svg {
+    width: 3rem;
+    fill: var(--white);
+}
+
+svg:hover {
+    fill: var(--green-400);
+    transition: var(--transition-delay);
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+.projects, .ueber-mich {
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    /* background: url('../assets/hideout.svg');  */
+    /* background-size: contain; */
+    /* background-repeat:round;
+    background-position: center; */
+    /* background-blend-mode:difference; */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+
+.footer{
+    height: 4rem;
+    width: 100%;
+    /* background-color: var(--gray-800); */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p{
+    font-size: 0.75rem;
+    color: var(--gray-300);
+}
+
+/*Tiny devices*/
+
+@media only screen and (max-width: 300px) {
+    h1 {
+        font-size: 5rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (min-width: 300px) {
+    h1 {
+        font-size: 6rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+    :root {
+        font-size: 10px;
+    }
+    h1 {
+        font-size: 6rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+    :root {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 6rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
+    :root {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 8rem;
+    }
+    p {
+        font-size: 2rem;
+    }
+    /*compensate for scrollbar*/
+    /* html {
+        margin-left: calc(100vw - 100%);
+        margin-right: 0;
+    } */
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+    :root {
+        font-size: 16px;
+    }
+    h1 {
+        font-size: 10rem;
+    }
+    p {
+        font-size: 2rem;
+    }
+}
+
+.stuff {
+    /* background-color: rebeccapurple; */
+    display: none;
+    /* display: grid; */
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+    position: fixed;
+    /* Set the navbar to fixed position */
+    bottom: 0.75rem;
+    /* Position the navbar at the top of the page */
+    width: 100%;
+    /* Full width */
+}
+
+.stuff img {
+    height: 1.5rem;
+    justify-self: center;
+    /* animation: MoveUpDown 5s ease-in-out infinite; */
+    /* padding: 0.5rem; */
+    filter: contrast(0) brightness(1.70);
+}
+
+.stuff img:hover {
+    cursor: pointer;
+    filter: contrast(1) brightness(1);
+    transition: 200ms;
+}
+
+@keyframes MoveUpDown {
+    0%, 100% {
+        transform: translateY(-0.3rem);
+    }
+    50% {
+        transform: translateY(0.3rem);
+    }
+}
+
+@keyframes MoveUpDown2 {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(0.3rem);
+    }
+}
+
+@keyframes ScaleUpDown {
+    0% {
+        transform: scale(0);
+        opacity: 100%;
+    }
+    15% {
+        transform: scale(1.2);
+        opacity: 100%;
+    }
+    25% {
+        /* transform: scale(0); */
+        opacity: 0%;
+    }
+    100% {
+        /* transform: scale(0); */
+        opacity: 0%;
+    }
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+.space{
+    /* letter-spacing: -0.5rem; */
+    letter-spacing: -0.75rem;
+}
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 0.75rem;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: var(--gray-900);
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: var(--gray-600);
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-500);
+}
